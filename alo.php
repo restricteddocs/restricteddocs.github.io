@@ -16,6 +16,7 @@
     font-family: 'josefin_sansregular', sans-serif;
     font-size: 16px;
 	color: #555;
+    outline: none;
     -webkit-transition: all 250ms ease-in;
     -moz-transition: all 250ms ease-in;
     -ms-transition: all 250ms ease-in;
